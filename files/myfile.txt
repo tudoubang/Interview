@@ -1,0 +1,1 @@
+PrintWriter是一种过滤流（也叫处理流），能对字节流(OutputStream)和字符流(Writer)进行处理，所以它必然支持对这两种方式的构造
