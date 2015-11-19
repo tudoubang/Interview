@@ -37,7 +37,31 @@ public class NewCalendar {
 		}
 		while(weekday != firstDayOfWeek);
 		System.out.println();
+		for(int i = 0; i<= indent; i++){
+			System.out.println("   ");
+		}
 		
+		gregorianCalendar.set(Calendar.DAY_OF_MONTH,1);
+		do{
+			int day = gregorianCalendar.get(Calendar.DAY_OF_MONTH);
+			System.out.printf("%3d", day);
+			
+			if(day == today){
+				System.out.print("*");
+			}else{
+				System.out.print("   ");
+			}
+			gregorianCalendar.add(Calendar.DAY_OF_MONTH, 1);
+			weekday = gregorianCalendar.get(Calendar.DAY_OF_WEEK);
+			
+			if(weekday == firstDayOfWeek){
+				System.out.println();
+			}	
+		}
+		while(gregorianCalendar.get(Calendar.MONTH) == month);
 		
+		if(weekday != firstDayOfWeek){
+			System.out.println();
+		}
 	}
 }
