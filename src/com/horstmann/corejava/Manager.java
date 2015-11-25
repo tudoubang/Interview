@@ -8,12 +8,26 @@ public class Manager extends Employee{
 	}
 	
 	public double getSalary(){
-		double baseSalary = getSalary();
+		double baseSalary = super.getSalary();
 		return baseSalary + bonus;
 	}
 	public Manager(String n, double s, int year, int month, int day) {
 		super(n, s, year, month, day);
-		// TODO Auto-generated constructor stub
+		bonus = 0;
+	}
+	
+	public static void main(String [] args){
+		Manager boss = new Manager("jeke", 50000, 2015, 3, 25);
+		boss.setBonus(5000);
+		
+		Employee[] staff = new Employee[3];
+		staff[0] = boss;
+		staff[1] = new Employee("tom",5000,2015,11,13);
+		staff[2] = new Employee("john",6000,2015,4,12);
+		
+		for(Employee e : staff){
+			System.out.println("name=" + e.getName() + " salary= " + e.getSalary());
+		}
 	}
 
 }
