@@ -3,12 +3,13 @@ package com.manage.authority;
 
 public abstract class Manager {
 
-	private int Id;
+	private int id;
 	private String name;
     public abstract String getManager();
 
-    public Manager(String n){
+    public Manager(String n,int i){
     	name = n;
+        id = i;
     }
 
     public String getName(){
@@ -16,6 +17,6 @@ public abstract class Manager {
     }
 
     public int getId(){
-        return (int) (Math.random() * 10);
+        return id;
     }
 }
