@@ -1,5 +1,7 @@
 package com.exercise.five;
 
+import java.util.ArrayList;
+
 public class SimpleDotComTestDriver {
 	public static void main(String [] args){
 		
@@ -8,8 +10,10 @@ public class SimpleDotComTestDriver {
 		
 		SimpleDotCom dot = new SimpleDotCom();
 		int randomNum = (int) (Math.random() * 5);
+		String randomString = Integer.toString(randomNum);
 		
-		int[] locations = {randomNum, randomNum+1, randomNum+2};
+		ArrayList<String> locations = new ArrayList<String>();
+		locations.add(randomString);
 		dot.setLocationCells(locations);
 		boolean isAlive = true;
 		
